@@ -12,6 +12,9 @@ const nextConfig: NextConfig = {
   // Enable React strict mode for better development experience
   reactStrictMode: true,
 
+  // Empty turbopack config to silence webpack/turbopack conflict warning
+  turbopack: {},
+
   // Image optimization configuration
   images: {
     domains: [],
