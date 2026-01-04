@@ -314,7 +314,7 @@ export async function getMuscleGroupsWorked(
 
   const muscleGroups: Record<string, number> = {};
   (exercises || []).forEach((ex) => {
-    const exercise = ex.exercise as { muscle_groups: string[] } | null;
+    const exercise = ex.exercise as unknown as { muscle_groups: string[] } | null;
     if (exercise?.muscle_groups) {
       exercise.muscle_groups.forEach((mg: string) => {
         muscleGroups[mg] = (muscleGroups[mg] || 0) + 1;
